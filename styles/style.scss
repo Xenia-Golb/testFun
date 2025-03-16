@@ -1,19 +1,20 @@
-$primary-color: #141416;
-$secondary-color: #ffffff;
-$accent-color: #676767;
-$hover-color: #f2f2f2;
+$padding-center: 0 93px 0 96px;
 $btn-radius: 16px;
+$font-inter: "Inter", sans-serif;
+$font-poppins: "Poppins", sans-serif;
+$font-outfit: "Outfit", sans-serif;
+$font-public: "Public_Sans", sans-serif;
 $font-medium: 500;
 $font-large: 600;
 $font-size-base: 16px;
 $font-size-large: 75px;
 $font-size-small: 14px;
 $font-size-header: 22px;
+$primary-color: #141416;
+$secondary-color: #ffffff;
+$accent-color: #676767;
+$hover-color: #f2f2f2;
 $transition-duration: 0.3s;
-
-$font-inter: "Inter", sans-serif;
-$font-poppins: "Poppins", sans-serif;
-$font-outfit: "Outfit", sans-serif;
 * {
   margin: 0;
   padding: 0;
@@ -42,52 +43,94 @@ body {
   font-style: normal;
   font-weight: normal;
 }
+@font-face {
+  font-family: "Public_Sans";
+  src: url("../fonts/Public_Sans/static/PublicSans-Medium.ttf");
+  font-style: normal;
+  font-weight: normal;
+}
 @mixin button-styles($bg-color, $text-color, $border-color) {
-  color: $text-color;
+  border: 1.5px solid $border-color;
+  border-radius: $btn-radius;
   font-family: inherit;
   font-size: $font-size-base;
+  color: $text-color;
   line-height: 24.26px;
   text-transform: uppercase;
   font-weight: $font-medium;
-  border-radius: $btn-radius;
   background-color: $bg-color;
-  border: 1.5px solid $border-color;
   transition: background-color $transition-duration ease;
 
   &:hover {
-    background-color: $hover-color;
     border-color: $border-color;
     color: $bg-color;
-  }
-}
-.btn-dark {
-  @include button-styles($primary-color, $secondary-color, $secondary-color);
-  &:hover {
     background-color: $hover-color;
-    border: 1.5px solid $secondary-color;
-    color: #141416;
   }
 }
+@mixin nav-styles(
+  $height-type,
+  $width-type,
+  $text-color,
+  $text-transform: none
+) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  gap: 54px;
 
-.btn-light {
-  @include button-styles($secondary-color, $primary-color, $primary-color);
-  &:hover {
-    background-color: #d7d7d7;
-    border: 2px solid $secondary-color;
-    color: #1a1a1a;
+  li {
+    #{$height-type}-height: 43px;
+    #{$width-type}-width: 131px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+
+    &:hover {
+      background-color: #c3c3c3;
+      a {
+        color: #000000;
+      }
+    }
+
+    a {
+      color: $text-color;
+      font-size: 17.83px;
+      line-height: 26.74px;
+      font-weight: $font-medium;
+      text-transform: $text-transform;
+      text-decoration: none;
+    }
   }
 }
-.btn-medium {
-  width: 183px;
-  height: 67px;
-}
-.btn-big {
-  width: 199px;
-  height: 58px;
-}
-.btn-small {
-  width: 121px;
-  height: 51px;
+.btn {
+  &-dark {
+    @include button-styles($primary-color, $secondary-color, $secondary-color);
+    &:hover {
+      border: 1.5px solid $secondary-color;
+      color: $primary-color;
+      background-color: $hover-color;
+    }
+  }
+  &-light {
+    @include button-styles($secondary-color, $primary-color, $primary-color);
+    &:hover {
+      color: #1a1a1a;
+      background-color: #d7d7d7;
+    }
+  }
+  &-big {
+    width: 199px;
+    height: 58px;
+  }
+  &-medium {
+    width: 183px;
+    height: 67px;
+  }
+  &-small {
+    width: 121px;
+    height: 51px;
+  }
 }
 .header {
   position: fixed;
@@ -96,13 +139,12 @@ body {
   width: 100vw;
   height: 88px;
   z-index: 1000;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-  padding-left: 93px;
-  padding-right: 96px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: $padding-center;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 
   &__menu {
     display: flex;
@@ -110,35 +152,12 @@ body {
     gap: 54px;
   }
   &__logo {
-    background-image: url("../img/wave2.svg");
     width: 53px;
     height: 53px;
+    background-image: url("../img/wave2.svg");
   }
-
   &__nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    list-style-type: none;
-    margin-right: 30px;
-    li {
-      max-height: 43px;
-      max-width: 131px;
-      text-align: center;
-      padding: 10px;
-      border-radius: 10px;
-      &:hover {
-        background-color: #c3c3c3;
-      }
-      a {
-        color: #606060;
-        font-size: 17.83px;
-        line-height: 26.74px;
-        font-weight: 500;
-        text-transform: uppercase;
-        text-decoration: none;
-      }
-    }
+    @include nav-styles(max, max, #606060, uppercase);
   }
 }
 .header-scrolled {
@@ -147,9 +166,32 @@ body {
 }
 .intro {
   width: 100vw;
-  padding-left: 93px;
-  margin-top: 111px;
   display: flex;
+  padding: 111px 0 130px 93px;
+  &__info {
+    width: 50vw;
+  }
+
+  &__title {
+    font-family: $font-poppins;
+    font-size: $font-size-large;
+    line-height: 120%;
+    font-weight: $font-large;
+    color: $primary-color;
+  }
+  &__text {
+    margin-bottom: 45px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: $accent-color;
+    span {
+      font-size: 18px;
+      font-weight: $font-large;
+      line-height: 28px;
+      color: $primary-color;
+    }
+  }
   &__imgs {
     position: relative;
     width: 50vw;
@@ -176,299 +218,297 @@ body {
     position: absolute;
     top: 17%;
     left: 65%;
-    transform: translateX(-50%);
     opacity: 0;
+    transform: translateX(-50%);
     transition: opacity 0.5s ease-in-out;
   }
 
-  &__info {
-    width: 50vw;
-  }
-
-  &__title {
-    font-family: "Poppins", sans-serif;
-    font-size: 75px;
-    line-height: 120%;
-    font-weight: 600;
-    color: #141416;
-    padding-bottom: 16px;
-  }
-  &__text {
-    color: #676767;
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: 400;
-    padding-bottom: 45px;
-    span {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 28px;
-      color: #141416;
-    }
-  }
   &__btns {
     display: flex;
     gap: 23px;
-    font-family: "Poppins", sans-serif;
+    font-family: $font-poppins;
   }
   &__bottom {
-    padding-top: 82px;
     display: flex;
     gap: 65px;
+    padding-top: 82px;
 
     h3 {
+      font-family: $font-public;
       font-size: 36px;
-      font-weight: 600;
+      font-weight: $font-large;
       line-height: 45.96px;
       color: #141416;
     }
     p {
       font-size: 12px;
-      font-weight: 500;
+      font-weight: $font-medium;
       line-height: 18px;
       color: #848586;
     }
   }
 }
 .main {
-  margin-top: 165px;
-  background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: #f1f1f1;
   h3 {
-    padding-top: 40px;
-    padding-bottom: 130px;
-    font-family: "Poppins", sans-serif;
+    padding: 40px 0 130px 0;
+    font-family: $font-poppins;
     text-align: center;
     font-size: 45px;
-    font-weight: 600;
+    font-weight: $font-large;
     line-height: 27px;
     color: #c5c5c5;
   }
   .scroll-container {
-    transition: transform 0.3sease;
+    margin: 0 auto;
     gap: 60px;
-    padding: 10px;
     justify-content: center;
     align-items: center;
     max-width: 100vw;
     min-height: 300px;
-    margin: 0 auto;
+    padding: 10px;
+    transition: transform 0.3sease;
     transition: transform 0.3s ease;
     transform: translateY(0);
     overflow-x: hidden;
   }
   .scroll-content {
     display: flex;
-    transition: transform 0.3s ease;
     gap: 60px;
     padding: 10px;
+    transition: transform 0.3s ease;
   }
-  .item {
+  .slide {
     display: flex;
     flex-direction: column;
-    background-color: $secondary-color;
-    max-width: 281px;
-    max-height: 402px;
-    text-align: center;
-    border-radius: 23.48px;
     align-items: center;
     justify-content: center;
-
-    &__img {
-      max-width: 253px;
-      min-width: 200px;
-      min-height: 200px;
-      max-height: 253px;
-      padding-top: 14px;
-      position: relative;
-
-      img {
-        width: 100%;
-        border-radius: 24px;
-      }
-    }
-
-    .countdown-timer {
-      position: absolute;
-      top: 22px;
-      right: 25px;
-      background-color: #1c1d2059;
-      backdrop-filter: blur(4.71px);
-      color: #fff;
-      padding: 5px 7px;
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: 10px;
-      display: none;
-    }
-
-    .current-bid {
-      display: flex;
-      flex-direction: column;
-
-      align-items: flex-start;
-      justify-content: center;
-      gap: 5px;
-      font-size: 14px;
-      font-weight: 500;
-      padding-bottom: 21px;
-      p {
-        color: #94a3b8;
-        font-family: "Poppins", sans-serif;
-        text-align: left;
-        font-size: 14px;
-        font-weight: 400;
-      }
-    }
-    .bid-container {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: flex-start;
-      font-family: "Poppins", sans-serif;
-      text-align: left;
-      font-size: 14px;
-      font-weight: 400;
-    }
+    border-radius: 23.48px;
+    max-width: 281px;
+    max-height: 412px;
+    text-align: center;
+    background-color: $secondary-color;
     h5 {
-      font-family: "Poppins", sans-serif;
-      font-size: 22px;
-      font-weight: 600;
+      padding: 18px 0 14px 0;
+      font-family: $font-poppins;
+      font-size: $font-size-header;
+      font-weight: $font-large;
       text-align: left;
-      padding-top: 18px;
-      padding-bottom: 14px;
     }
-    .slide__info-wrapper {
-      display: flex;
-      gap: 17px;
-      padding-bottom: 7px;
-      align-items: flex-start;
-      justify-content: flex-start;
+    &__img {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 24px;
+      margin-top: 10px;
+      width: 253px;
+      height: 253px;
+    }
+
+    #slide1 {
+      background-image: url("../img/slide1.png");
+    }
+
+    #slide2 {
+      background-image: url("../img/slide2.png");
+    }
+
+    #slide3 {
+      background-image: url("../img/slide3.png");
+    }
+
+    #slide4 {
+      background-image: url("../img/slide4.png");
+    }
+
+    #slide5 {
+      background-image: url("../img/slide5.png");
+    }
+    &__info {
+      &-wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 17px;
+        padding-bottom: 7px;
+      }
+      &__current-bid {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+        padding-bottom: 21px;
+        font-size: $font-size-small;
+        font-weight: $font-medium;
+        &-text {
+          text-align: left;
+          font-family: $font-poppins;
+          font-size: 14px;
+          font-weight: 400;
+          color: #94a3b8;
+        }
+        &-container {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+          font-family: $font-poppins;
+          text-align: left;
+          font-size: $font-size-small;
+          font-weight: 400;
+        }
+        &-countdown-timer {
+          position: absolute;
+          top: 22px;
+          right: 25px;
+          display: none;
+          padding: 5px 7px;
+          border-radius: 10px;
+          color: $secondary-color;
+          font-size: $font-size-small;
+          font-weight: $font-large;
+          background-color: #1c1d2059;
+          backdrop-filter: blur(4.71px);
+        }
+      }
     }
   }
   .scroll-buttons {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 100px;
     margin-bottom: 100px;
-  }
-
-  .scroll-button {
-    width: 83px;
     height: 69px;
-    padding: 21.56px;
-    text-align: center;
-    background-color: #fcfcfd;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 166px;
     border-radius: 17.25px;
+    background-color: #fcfcfd;
+
+    &__border {
+      width: 3px;
+      height: 26px;
+      background-color: #e6e8ec;
+    }
+    .scroll-button {
+      height: 69px;
+      width: 83px;
+      border: none;
+      border-radius: 17.25px;
+      padding: 22px;
+      text-align: center;
+      background-color: #fcfcfd;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  }
+  .widget-container {
+    background-color: $secondary-color;
+    .widget {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      align-content: center;
+      flex-wrap: nowrap;
+      height: 311px;
+      border-radius: 30px;
+      margin: 100px 96px 100px 93px;
+      text-align: center;
+      background-color: $primary-color;
+
+      h4 {
+        font-family: $font-poppins;
+        font-size: 45px;
+        font-weight: $font-large;
+        color: #ffffff;
+      }
+      p {
+        padding: 12px 0 60px 0;
+        font-family: $font-poppins;
+        font-size: 20px;
+        font-weight: $font-medium;
+        color: #d4d4d4;
+      }
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+      }
+      &__btns {
+        display: flex;
+        gap: 30px;
+        font-family: $font-outfit;
+      }
+      &__img {
+        width: 360px;
+        height: 264px;
+        background-image: url("../img/widget.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
   }
 }
 .footer {
+  background-color: black;
   &__logo {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     gap: 13px;
+    font-family: $font-poppins;
     font-size: 29px;
-    font-weight: 600;
+    font-weight: $font-large;
     line-height: 130%;
-    font-family: "Poppins", sans-serif;
+
     &::before {
       content: "";
       display: block;
-      background-image: url("../img/wave1.svg");
       width: 53px;
       height: 53px;
+      background-image: url("../img/wave1.svg");
     }
   }
-  &__bottom {
-    background-color: black;
+  &__nav {
+    @include nav-styles(min, min, #b9b9b9);
   }
   &__menu {
-    padding-top: 45px;
-    padding-left: 93px;
-    padding-right: 68px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #818181;
+    padding: 45px 68px 25px 93px;
     a {
-      color: $secondary-color;
       text-decoration: none;
+      color: $secondary-color;
+    }
+    &__border {
+      margin: 0 auto;
+      width: 88vw;
+      height: 1px;
+      background-color: #818181;
     }
   }
   &__social {
     display: flex;
     justify-content: space-between;
-    padding-top: 57px;
-    padding-left: 93px;
-    padding-right: 96px;
-    padding-bottom: 81px;
+    padding: 57px 96px 81px 93px;
     p {
       font-size: 17px;
-      color: #999999;
-      font-weight: 500;
+      font-weight: $font-medium;
       line-height: 25px;
+      color: #999999;
     }
     .social__link {
       display: flex;
       align-items: center;
       gap: 53px;
-    }
-  }
-
-  .container {
-    height: 311px;
-    background-color: #141416;
-    border-radius: 30px;
-    margin-top: 100px;
-    margin-left: 93px;
-    margin-right: 96px;
-    margin-bottom: 100px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    flex-wrap: nowrap;
-    &__info {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-    }
-    &__btns {
-      display: flex;
-      gap: 30px;
-      font-family: "Outfit", sans-serif;
-    }
-    h4 {
-      font-size: 45px;
-      font-weight: 600;
-      color: #ffffff;
-      font-family: "Poppins", sans-serif;
-    }
-    p {
-      font-size: 20px;
-      font-weight: 500;
-      color: #d4d4d4;
-      padding-bottom: 60px;
-      padding-top: 12px;
-      font-family: "Poppins", sans-serif;
-    }
-    &__img {
-      width: 390px;
-      height: 264px;
-      background-image: url("../img/Group\ 427320345.png");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
     }
   }
 }

@@ -54,7 +54,9 @@ function getRandomBid() {
   return (Math.random() * (5 - 1) + 1).toFixed(2);
 }
 
-const countdownElements = document.querySelectorAll(".countdown-timer");
+const countdownElements = document.querySelectorAll(
+  ".slide__info__current-bid-countdown-timer"
+);
 
 function startCountdown(element, initialTime) {
   let timeRemaining = initialTime;
@@ -80,12 +82,16 @@ function startCountdown(element, initialTime) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const bidValues = document.querySelectorAll(".bid-value");
+  const bidValues = document.querySelectorAll(
+    ".slide__info__current-bid-value"
+  );
   bidValues.forEach((bidValue) => {
     if (bidValue) {
       bidValue.innerText = getRandomBid();
     }
-    const countdownElement = document.querySelector(".countdown-timer");
+    const countdownElement = document.querySelector(
+      ".slide__info__current-bid-countdown-timer"
+    );
     if (countdownElement) {
       startCountdown(countdownElement);
     }
@@ -93,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const bidValue = document.querySelector(".bid-value");
+  const bidValue = document.querySelector(".slide__info__current-bid-value");
   if (bidValue) {
     bidValue.innerText = getRandomBid();
   }
