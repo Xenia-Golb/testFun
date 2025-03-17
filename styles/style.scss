@@ -80,8 +80,8 @@ body {
   gap: 54px;
 
   li {
-    #{$height-type}-height: 43px;
-    #{$width-type}-width: 131px;
+    height: 43px;
+    width: 131px;
     text-align: center;
     border-radius: 10px;
     padding: 10px;
@@ -563,14 +563,36 @@ body {
 }
 @media (max-width: 1200px) {
   .header {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0 50px 0 50px;
   }
   .intro {
-    padding-left: 50px;
-    margin-top: 80px;
+    padding: 80px 0 50px 0;
+    &__title {
+      font-size: 53px;
+    }
+    &__text {
+      font-size: 13px;
+    }
     &__imgs {
       width: 60vw;
+    }
+    #img1 {
+      left: 0;
+      width: 278px;
+      height: 280px;
+    }
+    #img2 {
+      width: 226px;
+      height: 229px;
+    }
+    #img3 {
+      width: 123px;
+      height: 284px;
+    }
+    #arrow {
+      left: 78%;
+      width: 91px;
+      height: 88px;
     }
   }
   .main {
@@ -580,60 +602,222 @@ body {
 
 @media (max-width: 768px) {
   .header {
-    padding-left: 20px;
-    padding-right: 20px;
+    justify-content: space-around;
+    height: 60px;
+    padding: 0 20px 0 20px;
+    &__menu {
+      gap: 10px;
+    }
+
     &__nav {
+      gap: 20px;
       li {
+        width: 100px;
+
         a {
           font-size: 12.68px;
         }
       }
     }
   }
-  .btn-dark {
-    width: 142px;
-    height: 41px;
-    font-size: 11.5px;
+  .btn {
+    &-big {
+      width: 142px;
+      height: 41px;
+      font-size: 12px;
+    }
+    &-medium {
+      width: 142px;
+      height: 41px;
+      font-size: 11.5px;
+    }
+    &-small {
+      width: 86px;
+      height: 36px;
+      font-size: 10px;
+    }
   }
   .intro {
-    padding-left: 20px;
     margin-top: 60px;
+    padding: 60px 0 0 20px;
     &__title {
+      margin-bottom: 12px;
       font-size: 50px;
     }
     &__text {
-      font-size: 14px;
+      margin-bottom: 30px;
+      font-size: 12px;
     }
     &__btns {
       gap: 15px;
     }
+    &__bottom {
+      gap: 46px;
+      padding-top: 58px;
+      &__info {
+        h3 {
+          font-size: 26px;
+        }
+      }
+    }
   }
-
   .main {
-    margin-top: 100px;
+    width: 100vw;
     h3 {
+      padding: 40px 0 70px 0;
       font-size: 32px;
+    }
+    .scroll-content {
+      gap: 28px;
+    }
+    .slide {
+      width: 269px;
+      height: 286px;
+      &__img {
+        width: 159px;
+        height: 179px;
+        background-repeat: 16px;
+      }
+      &__info {
+        h5 {
+          font-size: 15px;
+        }
+        &__current-bid-text {
+          font-size: 10px;
+        }
+        &__current-bid-text {
+          font-size: 10px;
+        }
+        &__current-bid-countdown-timer {
+          font-size: 10px;
+        }
+      }
+    }
+    .scroll-buttons {
+      margin-top: 81px;
+      margin-bottom: 64px;
+      height: 79px;
+      width: 135px;
+      border-radius: 13px;
+      .scroll-button {
+        height: 35px;
+        width: 69px;
+        padding: 8px;
+        border-radius: 13px;
+        #svg_prev {
+          color: 24px;
+          text-align: center;
+        }
+        #svg_next {
+          width: 18px;
+          height: 8px;
+        }
+      }
+    }
+    .widget-container {
+      width: 100vw;
+      .widget {
+        height: 221px;
+        margin: 70px 60px 78px 43px;
+        h4 {
+          font-size: 32px;
+        }
+        p {
+          font-size: 14px;
+          padding-bottom: 35px;
+        }
+        &__img {
+          width: 260px;
+          height: 250px;
+        }
+      }
+    }
+  }
+  .footer {
+    width: 100vw;
+    padding: 0 20px 0 20px;
+    &__logo {
+      font-size: 21px;
+    }
+    &__nav {
+      gap: 10px;
+      li {
+        width: 100px;
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+    &__menu {
+      padding: 20px 0px 10px 0px;
+    }
+    &__social {
+      p {
+        font-size: 10px;
+      }
     }
   }
 }
 
 @media (max-width: 480px) {
+  .btn {
+    &-medium {
+      width: 128px;
+      height: 41px;
+      font-size: 11.5px;
+    }
+  }
   .header {
     padding-left: 10px;
     padding-right: 10px;
+    &__nav {
+      display: none;
+    }
+    button {
+      display: none;
+    }
   }
 
   .intro {
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
     padding-left: 10px;
-    margin-top: 40px;
-    &__title {
-      font-size: 35px;
-    }
-    &__text {
-      font-size: 12px;
-    }
-    &__btns {
-      gap: 10px;
+    margin-top: 30px;
+    &__info {
+      height: 50vh;
+      width: 100vw;
+      &__title {
+        font-size: 35px;
+      }
+      &__text {
+        font-size: 12px;
+      }
+      &__btns {
+        gap: 10px;
+      }
+      &__imgs {
+        width: 100vw;
+        #img1 {
+          position: absolute;
+          width: 208px;
+          height: 210px;
+        }
+        #img2 {
+          width: 170px;
+          height: 181px;
+          right: -100px;
+        }
+        #img3 {
+          width: 123px;
+          height: 284px;
+        }
+        #arrow {
+          left: 78%;
+          width: 91px;
+          height: 88px;
+        }
+      }
     }
   }
 

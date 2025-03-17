@@ -123,8 +123,8 @@ body {
   gap: 54px;
 }
 .header__nav li {
-  max-height: 43px;
-  max-width: 131px;
+  height: 43px;
+  width: 131px;
   text-align: center;
   border-radius: 10px;
   padding: 10px;
@@ -238,7 +238,7 @@ body {
   background-color: #f1f1f1;
 }
 .main h3 {
-  padding: 40px 0 130px 0;
+  padding: 40px 0 100px 0;
   font-family: "Poppins", sans-serif;
   text-align: center;
   font-size: 45px;
@@ -459,8 +459,8 @@ body {
   gap: 54px;
 }
 .footer__nav li {
-  min-height: 43px;
-  min-width: 131px;
+  height: 43px;
+  width: 131px;
   text-align: center;
   border-radius: 10px;
   padding: 10px;
@@ -561,15 +561,37 @@ body {
 
 @media (max-width: 1200px) {
   .header {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0 50px 0 50px;
   }
   .intro {
-    padding-left: 50px;
-    margin-top: 80px;
+    padding: 80px 0 50px 0;
+  }
+  .intro__title {
+    font-size: 53px;
+  }
+  .intro__text {
+    font-size: 13px;
   }
   .intro__imgs {
     width: 60vw;
+  }
+  .intro #img1 {
+    left: 0;
+    width: 278px;
+    height: 280px;
+  }
+  .intro #img2 {
+    width: 226px;
+    height: 229px;
+  }
+  .intro #img3 {
+    width: 123px;
+    height: 284px;
+  }
+  .intro #arrow {
+    left: 78%;
+    width: 91px;
+    height: 88px;
   }
   .main {
     margin-top: 120px;
@@ -577,54 +599,209 @@ body {
 }
 @media (max-width: 768px) {
   .header {
-    padding-left: 20px;
-    padding-right: 20px;
+    justify-content: space-around;
+    height: 60px;
+    padding: 0 20px 0 20px;
+  }
+  .header__menu {
+    gap: 10px;
+  }
+  .header__nav {
+    gap: 20px;
+  }
+  .header__nav li {
+    width: 100px;
   }
   .header__nav li a {
     font-size: 12.68px;
   }
-  .btn-dark {
+  .btn-big {
+    width: 142px;
+    height: 41px;
+    font-size: 12px;
+  }
+  .btn-medium {
     width: 142px;
     height: 41px;
     font-size: 11.5px;
   }
+  .btn-small {
+    width: 86px;
+    height: 36px;
+    font-size: 10px;
+  }
   .intro {
-    padding-left: 20px;
     margin-top: 60px;
+    padding: 60px 0 0 20px;
   }
   .intro__title {
+    margin-bottom: 12px;
     font-size: 50px;
   }
   .intro__text {
-    font-size: 14px;
+    margin-bottom: 30px;
+    font-size: 12px;
   }
   .intro__btns {
     gap: 15px;
   }
+  .intro__bottom {
+    gap: 46px;
+    padding-top: 58px;
+  }
+  .intro__bottom__info h3 {
+    font-size: 26px;
+  }
   .main {
-    margin-top: 100px;
+    width: 100vw;
   }
   .main h3 {
+    padding: 40px 0 70px 0;
     font-size: 32px;
+  }
+  .main .scroll-content {
+    gap: 28px;
+  }
+  .main .slide {
+    width: 269px;
+    height: 286px;
+  }
+  .main .slide__img {
+    width: 159px;
+    height: 179px;
+    background-repeat: 16px;
+  }
+  .main .slide__info h5 {
+    font-size: 15px;
+  }
+  .main .slide__info__current-bid-text {
+    font-size: 10px;
+  }
+  .main .slide__info__current-bid-text {
+    font-size: 10px;
+  }
+  .main .slide__info__current-bid-countdown-timer {
+    font-size: 10px;
+  }
+  .main .scroll-buttons {
+    margin-top: 81px;
+    margin-bottom: 64px;
+    height: 79px;
+    width: 135px;
+    border-radius: 13px;
+  }
+  .main .scroll-buttons .scroll-button {
+    height: 35px;
+    width: 69px;
+    padding: 8px;
+    border-radius: 13px;
+  }
+  .main .scroll-buttons .scroll-button #svg_prev {
+    color: 24px;
+    text-align: center;
+  }
+  .main .scroll-buttons .scroll-button #svg_next {
+    width: 18px;
+    height: 8px;
+  }
+  .main .widget-container {
+    width: 100vw;
+  }
+  .main .widget-container .widget {
+    height: 221px;
+    margin: 70px 60px 78px 43px;
+  }
+  .main .widget-container .widget h4 {
+    font-size: 32px;
+  }
+  .main .widget-container .widget p {
+    font-size: 14px;
+    padding-bottom: 35px;
+  }
+  .main .widget-container .widget__img {
+    width: 260px;
+    height: 250px;
+  }
+  .footer {
+    width: 100vw;
+    padding: 0 20px 0 20px;
+  }
+  .footer__logo {
+    font-size: 21px;
+  }
+  .footer__nav {
+    gap: 10px;
+  }
+  .footer__nav li {
+    width: 100px;
+  }
+  .footer__nav li a {
+    font-size: 12px;
+  }
+  .footer__menu {
+    padding: 20px 0px 10px 0px;
+  }
+  .footer__social p {
+    font-size: 10px;
   }
 }
 @media (max-width: 480px) {
+  .btn-medium {
+    width: 128px;
+    height: 41px;
+    font-size: 11.5px;
+  }
   .header {
     padding-left: 10px;
     padding-right: 10px;
   }
-  .intro {
-    padding-left: 10px;
-    margin-top: 40px;
+  .header__nav {
+    display: none;
   }
-  .intro__title {
+  .header button {
+    display: none;
+  }
+  .intro {
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    margin-top: 30px;
+  }
+  .intro__info {
+    height: 50vh;
+    width: 100vw;
+  }
+  .intro__info__title {
     font-size: 35px;
   }
-  .intro__text {
+  .intro__info__text {
     font-size: 12px;
   }
-  .intro__btns {
+  .intro__info__btns {
     gap: 10px;
+  }
+  .intro__info__imgs {
+    width: 100vw;
+  }
+  .intro__info__imgs #img1 {
+    position: absolute;
+    width: 208px;
+    height: 210px;
+  }
+  .intro__info__imgs #img2 {
+    width: 170px;
+    height: 181px;
+    right: -100px;
+  }
+  .intro__info__imgs #img3 {
+    width: 123px;
+    height: 284px;
+  }
+  .intro__info__imgs #arrow {
+    left: 78%;
+    width: 91px;
+    height: 88px;
   }
   .main {
     margin-top: 80px;
