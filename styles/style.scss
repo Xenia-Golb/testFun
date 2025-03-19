@@ -136,7 +136,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 88px;
   z-index: 1000;
   display: flex;
@@ -164,17 +164,29 @@ body {
   }
   &__nav {
     @include nav-styles(max, max, #606060, uppercase);
+    gap: 29px;
   }
 }
 .header-scrolled {
   background-color: $secondary-color;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+.nav_mobile {
+  display: none;
+}
 
 .intro {
-  width: 100vw;
+  width: 100%;
   display: flex;
   padding: 111px 20px 130px 93px;
+  &-border {
+    height: 1px;
+    width: 200px;
+    background-color: #201f1f;
+    &__text {
+      display: none;
+    }
+  }
   &__info {
     width: 50%;
   }
@@ -206,7 +218,7 @@ body {
   }
   #img1 {
     position: absolute;
-    left: 80px;
+    left: 0;
     max-width: 470px;
     max-height: 518px;
   }
@@ -424,7 +436,7 @@ body {
       flex-wrap: nowrap;
       height: 311px;
       border-radius: 30px;
-      padding: 100px 96px 100px 93px;
+      padding: 12px 25px 22px 40px;
       text-align: center;
       background-color: $primary-color;
 
@@ -575,8 +587,8 @@ body {
   .header {
     padding: 0 50px 0 50px;
   }
-  .intro {
-    padding: 80px 0 50px 0;
+  .header .intro {
+    padding: 80px 20px 50px 20px;
 
     width: 100%;
     overflow: hidden;
@@ -888,16 +900,19 @@ body {
       padding: 50px 0 0 50px;
       text-align: left;
       li {
+        width: 100%;
+        padding: 5px;
+        text-align: left;
         a {
           font-size: 40px;
         }
       }
     }
     .social__link {
-      padding: 50px;
       display: flex;
       flex-direction: row;
       gap: 40px;
+      padding: 50px;
     }
     .block {
       position: absolute;
@@ -917,7 +932,25 @@ body {
     &__info {
       width: 100%;
     }
-    .__imgs {
+    &-border {
+      &__text {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        font-family: $font-poppins;
+        font-size: 9.25px;
+        font-weight: $font-medium;
+      }
+      width: 114px;
+      padding-left: 10px;
+    }
+    &-border-text {
+      width: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__imgs {
       width: 100%;
     }
     #img1 {
@@ -928,25 +961,25 @@ body {
       height: 210px;
     }
     #img2 {
+      left: 50%;
+      bottom: 0;
       width: 170px;
       height: 181px;
-      left: 80%;
-      bottom: 0;
     }
     #img3 {
       width: 123px;
       height: 284px;
-      left: 90%;
+      left: 60%;
       bottom: 0;
     }
     #arrow {
-      left: 98%;
+      left: 70%;
       width: 91px;
       height: 88px;
     }
     &__title {
-      text-align: center;
       margin-bottom: 20px;
+      text-align: center;
       font-size: 43px;
     }
     &__text {
@@ -983,9 +1016,6 @@ body {
         &__current-bid-text {
           font-size: 10px;
         }
-        &__current-bid-text {
-          font-size: 10px;
-        }
         &__current-bid-countdown-timer {
           font-size: 10px;
         }
@@ -1014,13 +1044,12 @@ body {
     }
     .widget-container {
       position: relative;
-      height: 50vh;
       padding: 30px 38px 60px 38px;
-
+      height: 50vh;
       .widget {
         flex-direction: column;
-        height: 211px;
         padding: 0;
+        height: 211px;
         h4 {
           font-size: 24px;
         }
@@ -1083,7 +1112,6 @@ body {
       align-items: flex-start;
       gap: 10px;
       padding: 20px 0 30px 0;
-
       li {
         height: 0;
         width: 50%;
