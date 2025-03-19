@@ -1,3 +1,18 @@
+function toggleMenu() {
+  const nav = document.querySelector(".nav_mobile");
+  const hamburger = document.querySelector(".header__hamburger");
+  const hamburgerIcon = document.querySelector(".hamburger-icon");
+  const closeIcon = document.querySelector(".close-icon");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+  nav.classList.toggle("active");
+  if (nav.classList.contains("active")) {
+    hamburgerIcon.style.display = "none";
+    closeIcon.style.display = "inline";
+  } else {
+    hamburgerIcon.style.display = "inline";
+    closeIcon.style.display = "none";
+  }
+}
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector(".header");
 

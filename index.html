@@ -8,56 +8,119 @@
     <title>Тестовое задание</title>
 </head>
 <body>
+   <section>
    <header class="header">
-      <div class="header__menu">
-         <a href="/index.html"><div class="header__logo"></div></a> 
-         <nav>
-            <ul class="header__nav">
-               <li><a href="#">Discover</a></li>
-               <li><a href="#">Creators</a></li>
-               <li><a href="#">but</a></li>
-               <li><a href="#">Stats</a></li>
-            </ul>
-         </nav>
-      </div>
-      <div><button class="btn-dark btn-big" type="button">Connect Wallet</button></div>
+         <div class="header__menu">
+            <a href="/index.html"><div class="header__logo">
+            </div>
+         </a> 
+           <a href="/index.html"><div class="header__logo-mobile ">DiveSea</div></a>
+            <nav >
+               <ul class="header__nav">
+                  <li><a href="#">Discover</a></li>
+                  <li><a href="#">Creators</a></li>
+                  <li><a href="#">but</a></li>
+                  <li><a href="#">Stats</a></li>
+               </ul>
+            </nav>
+            </div>
+            
+            <div class="header__menu__hamburger" onclick="toggleMenu()">
+               <span class="hamburger-icon">
+                  <svg width="34" height="25" viewBox="0 0 34 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M1.25 1H32.75H1.25Z" fill="#918F8F"/>
+                     <path d="M1.25 1H32.75" stroke="#282828" stroke-width="2" stroke-linecap="round"/>
+                     <path d="M1.25 12.1628H32.75H1.25Z" fill="#918F8F"/>
+                     <path d="M1.25 12.1628H32.75" stroke="#282828" stroke-width="2" stroke-linecap="round"/>
+                     <path d="M1.25 23.3256H32.75H1.25Z" fill="#918F8F"/>
+                     <path d="M1.25 23.3256H32.75" stroke="#282828" stroke-width="2" stroke-linecap="round"/>
+                     </svg>
+               </span>
+              
+               <span class="close-icon" style="display: none;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 3L3 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3 3L21 21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  </span> 
+               </div>
+         </div>
+         <div><button class="btn-dark btn-big" type="button">Connect Wallet</button></div>
    </header>
-
-   <div class="intro">
-      <div class="intro__info">
-         <h1 class="intro__title animate-title">Discover And <br> Create NFTs</h1>
-         <p class="intro__text animate-text">Discover, Create and Sell NFTs On Our NFT Marketplace <br>
-            With Over Thousands Of NFTs And Get a <span> $20 bonus.</span>
-         </p>
-         <div class="intro__btns animate-btns">
-            <button class="btn-dark btn-medium">Explore More</button>
-            <button class="btn-light btn-medium">Create NFT</button>
-         </div>
-         <div class="intro__bottom animate-stats">
-            <div class="intro__bottom__info">
-               <h3>430K+</h3>
-               <p>Art Works</p>
-            </div>
-            <div class="intro__bottom__info">
-               <h3>159K+</h3>
-               <p>Creators</p>
-            </div>
-            <div class="intro__bottom__info">
-               <h3>87K+</h3>
-               <p>Collections</p>
-            </div>
-         </div>
-      </div>
-      <div class="intro__imgs">
-         <img id="img1" src="./img/i1.png" alt="">
-         <img id="img2" src="./img/i2.png" alt="">
-         <img id="img3" src="./img/Group 427320330.svg" alt="">
-         <img id="arrow" src="./img/Arrow 01.svg" alt="">
-      </div>
+   <div class="nav_mobile"> 
+      <div class="footer__menu__border"></div>
+   <nav>
+      <ul class="nav">
+         <li><a href="#">Discover</a></li>
+         <li><a href="#">Creators</a></li>
+         <li><a href="#">but</a></li>
+         <li><a href="#">Stats</a></li>
+      </ul>
+   </nav>
+   <div class="social__link">
+      <a href="#"><svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9088 0C15.7682 0.0664132 17.694 0.0664132 19.5534 0.132818C21.2136 0.199222 22.741 0.464855 24.202 1.32815C26.0614 2.45708 27.1903 4.11727 27.5888 6.2423C27.788 7.50404 27.8544 8.83218 27.9208 10.0939C27.9872 12.883 27.9208 15.6722 27.9208 18.4613C27.9208 19.9222 27.8544 21.3832 27.3895 22.7777C26.4598 25.5005 24.534 27.1606 21.7449 27.6919C20.4831 27.9575 19.155 27.9575 17.8932 28.0239C15.1041 28.0903 12.3814 28.0239 9.59223 28.0239C8.13127 28.0239 6.6703 27.9575 5.27574 27.4927C2.55301 26.563 0.892817 24.6372 0.361552 21.848C0.0959252 20.5863 0.0959252 19.2582 0.0295163 17.9964C-0.0368954 15.2073 0.0295163 12.4182 0.0295163 9.62908C0.0295163 8.16812 0.0959251 6.70716 0.560778 5.31259C1.49049 2.58989 3.41631 0.929711 6.20544 0.398449C7.4672 0.132826 8.79535 0.132826 10.0571 0.0664132C11.3188 0 12.5806 0 13.9088 0ZM25.3965 13.7475C25.3301 13.7475 25.3965 13.7475 25.3965 13.7475C25.3301 12.6186 25.3301 11.5561 25.3301 10.4271C25.3301 9.36462 25.2637 8.30209 25.1309 7.23957C24.8652 4.8489 23.4707 3.25512 21.1464 2.79027C19.9511 2.52465 18.6229 2.52465 17.4276 2.52465C15.0369 2.45824 12.7126 2.45824 10.3219 2.52465C9.1266 2.52465 7.93126 2.59104 6.80232 2.79027C4.81008 3.12231 3.41552 4.25124 2.81785 6.24346C2.61863 6.90753 2.55223 7.57161 2.48581 8.23568C2.4194 10.7592 2.4194 13.2826 2.4194 15.8061C2.4194 17.3999 2.48581 19.0601 2.61863 20.6539C2.81785 23.0445 4.27882 24.7047 6.66951 25.1032C7.86484 25.3024 9.1266 25.3688 10.3883 25.3688C12.7126 25.4352 15.0369 25.3688 17.4276 25.3688C18.4901 25.3688 19.5526 25.3024 20.6152 25.1696C21.6113 25.1032 22.541 24.7711 23.3379 24.1071C24.666 23.0445 25.1309 21.65 25.1973 20.0562C25.3301 18.064 25.3301 15.9389 25.3965 13.7475Z" fill="#535353"/>
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0794 14.0113C21.0794 17.9957 17.8919 21.1833 13.9074 21.1833C9.92293 21.1833 6.73535 17.9957 6.73535 13.9449C6.73535 10.0269 9.98933 6.83936 13.9738 6.83936C17.8919 6.83936 21.0794 10.0269 21.0794 14.0113ZM13.9076 18.6613C16.4311 18.6613 18.5561 16.5362 18.5561 14.0128C18.5561 11.4893 16.4311 9.36428 13.9076 9.36428C11.3177 9.36428 9.25901 11.4893 9.25901 14.0128C9.1926 16.5362 11.3177 18.6613 13.9076 18.6613Z" fill="#535353"/>
+         <path d="M23.0069 6.50697C23.0069 7.43668 22.2764 8.23357 21.3467 8.23357C20.417 8.23357 19.6201 7.43668 19.6865 6.50697C19.6865 5.57726 20.417 4.84677 21.3467 4.84677C22.2764 4.84677 23.0069 5.57725 23.0069 6.50697Z" fill="#535353"/>
+         </svg>
+         
+         </a>
+      <a href="#"><svg width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M27.968 16.3484V26.6696H21.9409V17.0264C21.9409 14.6156 21.1122 12.9582 18.9274 12.9582C17.27 12.9582 16.2906 14.0882 15.8386 15.143C15.6879 15.5196 15.6126 16.047 15.6126 16.5744V26.6696H9.58556C9.58556 26.6696 9.6609 10.3214 9.58556 8.66396H15.6126V11.2254C15.6126 11.2254 15.6126 11.3008 15.5372 11.3008H15.6126V11.2254C16.4413 10.02 17.7974 8.21194 21.0369 8.21194C24.9545 8.21194 27.968 10.8487 27.968 16.3484ZM3.40778 0C1.37366 0 0.0175781 1.35607 0.0175781 3.08883C0.0175781 4.82158 1.29832 6.17767 3.33244 6.17767H3.40778C5.51724 6.17767 6.79798 4.82159 6.79798 3.08883C6.72265 1.35607 5.4419 0 3.40778 0ZM0.318882 26.6696H6.27058V8.66397H0.318882V26.6696Z" fill="#535353"/>
+         </svg>
+         
+         </a>
+      <a href="#"><svg width="13" height="28" viewBox="0 0 13 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5032 13.9751H8.59836V27.9503H2.77538V16.2616V13.9751H0.0351562V9.04274H2.77538V5.82298C2.77538 3.5623 3.87148 0 8.59836 0H12.9142V4.79539H9.83146C9.35192 4.79539 8.59836 5.06942 8.59836 6.16551V9.04274H12.9827L12.5032 13.9751Z" fill="#535353"/>
+         </svg>
+         </a>
+      <a href="#"><svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path fill-rule="evenodd" clip-rule="evenodd" d="M28.0001 3.01133C26.9479 3.47169 25.8956 3.80052 24.7119 3.93205C25.8956 3.20863 26.8163 2.09063 27.2109 0.775327C26.0929 1.43298 24.8434 1.89333 23.5938 2.15639C22.5416 1.03838 21.029 0.314972 19.3848 0.314972C16.2281 0.314972 13.6633 2.8798 13.6633 6.03652C13.6633 6.49689 13.729 6.95723 13.7948 7.35183C8.99391 7.08877 4.78492 4.85275 1.957 1.36722C1.43088 2.22216 1.16782 3.20863 1.16782 4.26087C1.16782 6.23383 2.1543 8.00948 3.73267 9.06171C2.81195 9.06171 1.89124 8.79866 1.10205 8.3383V8.40406C1.10205 11.1662 3.07502 13.5337 5.70564 14.0598C5.24527 14.1914 4.71915 14.2571 4.19302 14.2571C3.79844 14.2571 3.46961 14.1914 3.14078 14.1256C3.8642 16.4274 5.9687 18.0715 8.53354 18.1373C6.56059 19.6499 4.12726 20.5706 1.43088 20.5706C0.970521 20.5706 0.510166 20.5706 0.0498047 20.5048C2.61466 22.1489 5.5741 23.0697 8.86238 23.0697C19.4506 23.0697 25.1722 14.3229 25.1722 6.75994C25.1722 6.49689 25.1722 6.23383 25.1722 6.03652C26.2902 5.18159 27.2767 4.12934 28.0001 3.01133Z" fill="#535353"/>
+         </svg>
+         
+         </a>
    </div>
+   <div class="block"><button class="btn-dark btn-mobile" type="button">Connect Wallet</button></div>
+   </div></div>
+</section>
+
+   <section>
+      <div class="intro">
+         <div class="intro__info">
+            <h1 class="intro__title animate-title">Discover And <br> Create NFTs</h1>
+            <p class="intro__text animate-text">Discover, Create and Sell NFTs On Our NFT Marketplace <br>
+               With Over Thousands Of NFTs And Get a <span> $20 bonus.</span>
+            </p>
+            <div class="intro__btns animate-btns">
+               <button class="btn-dark btn-medium">Explore More</button>
+               <button class="btn-light btn-medium">Create NFT</button>
+            </div>
+            <div class="intro__bottom animate-stats">
+               <div class="intro__bottom__info">
+                  <h3>430K+</h3>
+                  <p>Art Works</p>
+               </div>
+               <div class="intro__bottom__info">
+                  <h3>159K+</h3>
+                  <p>Creators</p>
+               </div>
+               <div class="intro__bottom__info">
+                  <h3>87K+</h3>
+                  <p>Collections</p>
+               </div>
+            </div>
+         </div>
+         <div class="intro__imgs">
+            <img id="img1" src="./img/i1.png" alt="">
+            <img id="img2" src="./img/i2.png" alt="">
+            <img id="img3" src="./img/Group 427320330.svg" alt="">
+            <img id="arrow" src="./img/Arrow 01.svg" alt="">
+         </div>
+      </div>
+   </section>
 
    <main class="main">
-      <h3>Weekly - Top NFT</h3>
+      <section>
+         <h3>Weekly - Top NFT</h3>
       <div class="swiper-container scroll-container">
          <div class="swiper-wrapper scroll-content">
             <div class="swiper-slide slide">
@@ -169,21 +232,25 @@
             </svg>
             </div>
       </div>
+      </section>
+        <section>
          <div class="widget-container">
-           <div class="widget"><div class="widget__info">
-            <h4>Create and Sell NFTs</h4>
-            <p>World's Largest NFT Place</p>
-            <div class="widget__btns">
-               <button class="btn-light btn-medium">Explore More</button>
-               <button class="btn-dark btn-medium">Sell Artwork</button>
-            </div>
-         </div>
-         <div class="widget__img">
-         </div></div>
-      </div>
+            <div class="widget"><div class="widget__info">
+             <h4>Create and Sell NFTs</h4>
+             <p>World's Largest NFT Place</p>
+             <div class="widget__btns">
+                <button class="btn-light btn-medium">Explore More</button>
+                <button class="btn-dark btn-medium">Sell Artwork</button>
+             </div>
+          </div>
+          <div class="widget__img">
+          </div></div>
+       </div>
+        </section>
    </main>
 
    <footer class="footer">
+        <section class="footer-desctop">
          <div class="footer__menu">
             <a href="/index.html"><div class="footer__logo">DiveSea</div></a> 
             <nav>
@@ -219,7 +286,47 @@
                   </a>
             </div>
          </div>
-      
+         
+        </section>
+        <section class="footer-mobile">
+         <div class="footer-mobile">
+            <div class="footer-container">
+               <a href="/index.html"><div class="footer__logo">DiveSea</div></a> 
+               <div class="social__link">
+                  <a href="#"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M10.7721 0C12.1916 0.0506994 13.6618 0.0506994 15.0812 0.101392C16.3486 0.152085 17.5146 0.354867 18.6299 1.0139C20.0494 1.87572 20.9112 3.14309 21.2154 4.76533C21.3674 5.72853 21.4181 6.74243 21.4688 7.70564C21.5195 9.83483 21.4688 11.964 21.4688 14.0932C21.4688 15.2085 21.4181 16.3238 21.0633 17.3884C20.3535 19.4669 18.8834 20.7342 16.7542 21.1398C15.791 21.3426 14.7771 21.3426 13.8139 21.3933C11.6846 21.444 9.60615 21.3933 7.47694 21.3933C6.36165 21.3933 5.24635 21.3426 4.18176 20.9877C2.10325 20.278 0.835867 18.8078 0.430303 16.6786C0.227525 15.7154 0.227525 14.7015 0.176829 13.7383C0.126131 11.6091 0.176829 9.47996 0.176829 7.35077C0.176829 6.23549 0.227525 5.1202 0.582391 4.05559C1.29213 1.9771 2.76229 0.709734 4.89148 0.304173C5.8547 0.101399 6.8686 0.101399 7.83181 0.0506994C8.79502 0 9.75823 0 10.7721 0ZM19.5426 10.4939C19.4919 10.4939 19.5426 10.4939 19.5426 10.4939C19.4919 9.6321 19.4919 8.82097 19.4919 7.95916C19.4919 7.14805 19.4412 6.33692 19.3398 5.52581C19.137 3.70078 18.0724 2.4841 16.2981 2.12924C15.3855 1.92646 14.3716 1.92646 13.4591 1.92646C11.6341 1.87577 9.85976 1.87577 8.03473 1.92646C7.12222 1.92646 6.2097 1.97715 5.34788 2.12924C3.82702 2.38271 2.76243 3.24453 2.30617 4.76538C2.15408 5.27233 2.10339 5.77928 2.05269 6.28623C2.002 8.21264 2.002 10.139 2.002 12.0655C2.002 13.2821 2.05269 14.5495 2.15408 15.7662C2.30617 17.5912 3.42146 18.8586 5.2465 19.1627C6.159 19.3148 7.12222 19.3655 8.08543 19.3655C9.85976 19.4162 11.6341 19.3655 13.4591 19.3655C14.2703 19.3655 15.0814 19.3148 15.8925 19.2134C16.6529 19.1627 17.3627 18.9093 17.971 18.4023C18.9849 17.5912 19.3398 16.5266 19.3905 15.3099C19.4919 13.7891 19.4919 12.1668 19.5426 10.4939Z" fill="#535353"/>
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2471 10.6965C16.2471 13.7381 13.8137 16.1715 10.772 16.1715C7.73025 16.1715 5.29688 13.7381 5.29688 10.6458C5.29688 7.65478 7.78094 5.22144 10.8227 5.22144C13.8137 5.22144 16.2471 7.65478 16.2471 10.6965ZM10.7719 14.245C12.6983 14.245 14.3205 12.6228 14.3205 10.6964C14.3205 8.77 12.6983 7.14777 10.7719 7.14777C8.79474 7.14777 7.22318 8.77 7.22318 10.6964C7.17248 12.6228 8.79474 14.245 10.7719 14.245Z" fill="#535353"/>
+                     <path d="M17.7184 4.9677C17.7184 5.67743 17.1607 6.28578 16.451 6.28578C15.7413 6.28578 15.1329 5.67743 15.1836 4.9677C15.1836 4.25797 15.7413 3.70032 16.451 3.70032C17.1607 3.70032 17.7184 4.25796 17.7184 4.9677Z" fill="#535353"/>
+                     </svg>
+                     </a>
+                  <a href="#"><svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M21.633 12.4812V20.3603H17.032V12.9988C17.032 11.1584 16.3994 9.89316 14.7315 9.89316C13.4663 9.89316 12.7186 10.7558 12.3735 11.561C12.2585 11.8486 12.201 12.2512 12.201 12.6537V20.3603H7.60001C7.60001 20.3603 7.65752 7.88025 7.60001 6.61499H12.201V8.57039C12.201 8.57039 12.201 8.62789 12.1435 8.62789H12.201V8.57039C12.8336 7.6502 13.8689 6.26991 16.3419 6.26991C19.3325 6.26991 21.633 8.28283 21.633 12.4812ZM2.88347 0.00109863C1.33063 0.00109863 0.29541 1.03631 0.29541 2.35909C0.29541 3.68186 1.27312 4.71709 2.82595 4.71709H2.88347C4.49381 4.71709 5.47152 3.68187 5.47152 2.35909C5.41401 1.03631 4.4363 0.00109863 2.88347 0.00109863ZM0.526056 20.3604H5.06954V6.61501H0.526056V20.3604Z" fill="#535353"/>
+                     </svg>
+                     </a>
+                  <a href="#"><svg width="11" height="22" viewBox="0 0 11 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.95256 10.6697H6.97166V21.3383H2.52644V12.4152V10.6697H0.43457V6.90439H2.52644V4.44644C2.52644 2.72065 3.36319 0.0012207 6.97166 0.0012207H10.2663V3.66199H7.913C7.54692 3.66199 6.97166 3.87118 6.97166 4.70793V6.90439H10.3186L9.95256 10.6697Z" fill="#535353"/>
+                     </svg>
+                     </a>
+                  <a href="#"><svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6159 2.82596C20.8126 3.1774 20.0093 3.42842 19.1056 3.52883C20.0093 2.97658 20.7122 2.1231 21.0134 1.11901C20.1599 1.62106 19.2061 1.97249 18.2522 2.1733C17.4489 1.31982 16.2942 0.767578 15.039 0.767578C12.6292 0.767578 10.6712 2.72555 10.6712 5.13537C10.6712 5.48681 10.7214 5.83823 10.7716 6.13947C7.10668 5.93865 3.89356 4.23169 1.73475 1.57085C1.33311 2.22351 1.13229 2.97658 1.13229 3.77985C1.13229 5.28599 1.88536 6.64151 3.09028 7.44478C2.38741 7.44478 1.68455 7.24397 1.08208 6.89253V6.94273C1.08208 9.05133 2.58823 10.8587 4.59643 11.2603C4.24499 11.3607 3.84336 11.4109 3.44171 11.4109C3.14049 11.4109 2.88946 11.3607 2.63844 11.3105C3.19069 13.0677 4.79725 14.3228 6.75524 14.373C5.24909 15.5277 3.39151 16.2306 1.33311 16.2306C0.981677 16.2306 0.630245 16.2306 0.278809 16.1804C2.2368 17.4355 4.49602 18.1383 7.00626 18.1383C15.0893 18.1383 19.4571 11.4611 19.4571 5.68762C19.4571 5.48681 19.4571 5.28599 19.4571 5.13537C20.3106 4.48272 21.0636 3.67944 21.6159 2.82596Z" fill="white"/>
+                     </svg>
+                     </a>
+               </div>
+            
+               
+         </div>
+         <nav>
+            <ul class="footer__nav">
+               <li><a href="#">Privacy Policy</a></li>
+               <li><a href="#">Term & Conditions</a></li>
+               <li><a href="#">About Us</a></li>
+               <li><a href="#">Contact</a></li>
+            </ul>
+         </nav></div>
+         <div class="footer__menu__border"></div>
+         <p>© 2023 EATLY All Rights Reserved.</p>
+        </section>
+        
    </footer>
 
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -238,23 +345,25 @@
     grabCursor: true, 
     touchEventsTarget: "container",
     speed: 800, 
-    1200: {
-      slidesPerView: 4,    
-      spaceBetween: 40,   
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+ 
+    480: {
+      slidesPerView: 3,
+      spaceBetween: 10,
     },
     768: {
-      slidesPerView: 2,    
-      spaceBetween: 30,    
+      slidesPerView: 3.5, 
+      spaceBetween: 30,
     },
-    480: {
-      slidesPerView: 1,    
-      spaceBetween: 20,   
+    1024: {
+      slidesPerView: 4, 
+      spaceBetween: 30,
     },
-
-    320: {
-      slidesPerView: 1,   
-      spaceBetween: 10,   
-    },
+  },
   });
 });
 </script>
